@@ -1,0 +1,1 @@
+df64791ae3e2e96558f4b42201b9ed92b11b0d57ee12fd33d9a27c936a45305f  bluemove_launchpad.wasm

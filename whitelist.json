@@ -1,0 +1,151 @@
+[
+    "sei14v72v7hgzuvgck6v6jsgjacxnt34gj06qnx53d",
+    "sei1t22vwusjlxg4vp7gttsx7n2y9u4k0vv9lpk2ge",
+    "sei1983l7sakdd7nuk9p0fsfgc2j94mfarc2e3hy68"
+]
+
+
+
+### Execute Functions JSON Input
+
+#### claim_token
+```json
+{
+  "claim_token": {
+    "collection": "collection_address_here",
+    "quantity": 100
+  }
+}
+```
+
+#### mint_native
+```json
+{
+  "mint_native": {
+    "collection": "collection_address_here",
+    "group": "group_name_here",
+    "recipient": "optional_recipient_address_here",
+    "merkle_proof": "optional_merkle_proof_here",
+    "hashed_address": "optional_hashed_address_here"
+  }
+}
+```
+
+#### register_collection
+```json
+{
+  "register_collection": {
+    "cw721_code": 1407,
+    "name": "CAP NFT",
+    "symbol": "CN",
+    "supply": 1000,
+    "token_uri": "https://static.bluemove.net/cap-nft.json",
+    "royalty_percent": 5,
+    "royalty_wallet": "sei1983l7sakdd7nuk9p0fsfgc2j94mfarc2e3hy68",
+    "creator_wallet": "sei1983l7sakdd7nuk9p0fsfgc2j94mfarc2e3hy68",
+    "mint_groups": [
+      {
+        "name": "Public",
+        "max_tokens": 1,
+        "merkle_root": null,
+        "unit_price": "100000",
+        "start_time": 1688914800000,
+        "end_time": 1689001200000
+      }
+    ],
+    "iterated_uri": true,
+    "extension": {},
+    "time_can_claim": 1689015600000
+  }
+}
+```
+
+#### update_collection
+```json
+{
+  "update_collection": {
+    "collection": "collection_address_here",
+    "name": "New Name",
+    "symbol": "New Symbol",
+    "supply": 2000,
+    "token_uri": "new_token_uri_here",
+    "royalty_percent": 10,
+    "royalty_wallet": "new_royalty_wallet_address_here",
+    "creator_wallet": "new_creator_wallet_address_here",
+    "mint_groups": [
+      {
+        "name": "VIP",
+        "max_tokens": 2,
+        "merkle_root": null,
+        "unit_price": "200000",
+        "start_time": 1689027000000,
+        "end_time": 1689113400000
+      }
+    ],
+    "iterated_uri": false,
+    "time_can_claim": 1689124800000
+  }
+}
+```
+
+#### update_config
+```json
+{
+  "update_config": {
+    "extension": {},
+    "fee": "20000",
+    "registration_open": false
+  }
+}
+```
+
+### Query Functions JSON Input
+
+#### balance_of
+```json
+{
+  "balance_of": {
+    "address": "sei1kzw6r8le78hw933q0g5xldr23wny6kcmwfwcm6",
+    "collection": "collection_address_here"
+  }
+}
+```
+
+#### get_collection
+```json
+{
+  "get_collection": {
+    "collection": "sei1dtsakk2x576ct7nm8rl398f8ssh2kvku32cpjdmh5edtzdenu7tsyc6nsk"
+  }
+}
+```
+
+#### get_collections
+```json
+{
+  "get_collections": {
+    "start_after": "optional_starting_address",
+    "limit": 10,
+    "result_type": "full" // or "minimal"
+  }
+}
+```
+
+#### get_config
+```json
+{
+  "get_config": {}
+}
+```
+
+#### get_minter_of
+```json
+{
+  "get_minter_of": {
+    "collection": "collection_address_here",
+    "token_id": "token_id_here"
+  }
+}
+```
+
+These JSON inputs are structured according to the contract functions you've provided in `execute.rs`. Make sure to replace placeholder values with actual data relevant to your contract operations.
